@@ -1,9 +1,10 @@
 # Blueprint Render deployment specification for Student Management System
-# SINGLE Full-Stack Web Service (Express API + Built React Client)
+# Explicitly configured on 100% FREE Tier (plan: free)
 services:
   - type: web
     name: student-management-system
     env: node
+    plan: free
     buildCommand: npm run build
     startCommand: npm start
     envVars:
