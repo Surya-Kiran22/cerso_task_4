@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useToast } from '../hooks/useToast';
 import { InputField } from '../components/common/InputField';
-import { Button } from '../components/common/Button';
-import { GraduationCap, User, Mail, Lock, CheckCircle } from 'lucide-react';
+import { GraduationCap, User, Mail, Lock } from 'lucide-react';
 import {
   validateName,
   validateEmail,
@@ -111,17 +110,18 @@ export const Register = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1.5rem',
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: '#f8fafc',
       }}
     >
       <div
-        className="card"
         style={{
           width: '100%',
           maxWidth: '460px',
+          background: '#ffffff',
+          border: '1px solid #cbd5e1',
+          borderRadius: '8px',
+          boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
           padding: '2.5rem 2rem',
-          borderRadius: 'var(--radius-xl)',
-          boxShadow: 'var(--shadow-xl)',
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
@@ -129,21 +129,22 @@ export const Register = () => {
             style={{
               width: '56px',
               height: '56px',
-              borderRadius: 'var(--radius-lg)',
-              background: 'var(--color-primary-light)',
-              color: 'var(--color-primary)',
+              borderRadius: '8px',
+              background: '#ecfdf5',
+              color: '#235817',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '1rem',
+              border: '1px solid #a7f3d0',
             }}
           >
             <GraduationCap size={32} />
           </div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a' }}>
             Create an Account
           </h1>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+          <p style={{ color: '#64748b', fontSize: '0.875rem', marginTop: '0.25rem' }}>
             Register as an administrator to manage students
           </p>
         </div>
@@ -204,19 +205,25 @@ export const Register = () => {
             icon={Lock}
           />
 
-          <Button
+          <button
             type="submit"
-            variant="primary"
-            isLoading={isLoading}
-            style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem' }}
+            className="btn-dark-green"
+            disabled={isLoading}
+            style={{
+              width: '100%',
+              marginTop: '0.5rem',
+              padding: '0.75rem',
+              fontSize: '0.9375rem',
+              fontWeight: 700,
+            }}
           >
-            Create Account
-          </Button>
+            {isLoading ? 'Creating Account...' : 'Create Account'}
+          </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
+        <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.875rem', color: '#64748b' }}>
           Already have an account?{' '}
-          <Link to="/login" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>
+          <Link to="/login" style={{ color: '#235817', fontWeight: 700 }}>
             Sign in
           </Link>
         </div>

@@ -3,7 +3,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useToast } from '../hooks/useToast';
 import { InputField } from '../components/common/InputField';
-import { Button } from '../components/common/Button';
 import { GraduationCap, Mail, Lock, Sparkles } from 'lucide-react';
 import { validateEmail, validatePassword } from '../utils/validators';
 
@@ -81,17 +80,18 @@ export const Login = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1.5rem',
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: '#f8fafc',
       }}
     >
       <div
-        className="card"
         style={{
           width: '100%',
           maxWidth: '440px',
+          background: '#ffffff',
+          border: '1px solid #cbd5e1',
+          borderRadius: '8px',
+          boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
           padding: '2.5rem 2rem',
-          borderRadius: 'var(--radius-xl)',
-          boxShadow: 'var(--shadow-xl)',
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
@@ -99,31 +99,32 @@ export const Login = () => {
             style={{
               width: '56px',
               height: '56px',
-              borderRadius: 'var(--radius-lg)',
-              background: 'var(--color-primary-light)',
-              color: 'var(--color-primary)',
+              borderRadius: '8px',
+              background: '#ecfdf5',
+              color: '#235817',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '1rem',
+              border: '1px solid #a7f3d0',
             }}
           >
             <GraduationCap size={32} />
           </div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)' }}>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a' }}>
             Welcome Back
           </h1>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+          <p style={{ color: '#64748b', fontSize: '0.875rem', marginTop: '0.25rem' }}>
             Sign in to access your student management dashboard
           </p>
         </div>
 
-        {/* Demo Credentials Helper */}
+        {/* Demo Account Quick Box */}
         <div
           style={{
-            background: 'var(--color-primary-light)',
-            border: '1px border-solid var(--color-primary-border)',
-            borderRadius: 'var(--radius-md)',
+            background: '#f1f5f9',
+            border: '1px solid #cbd5e1',
+            borderRadius: '6px',
             padding: '0.75rem 1rem',
             marginBottom: '1.5rem',
             display: 'flex',
@@ -133,14 +134,14 @@ export const Login = () => {
           }}
         >
           <div>
-            <div style={{ fontWeight: 600, color: 'var(--color-primary)' }}>Demo Account</div>
-            <div style={{ color: 'var(--color-text-muted)' }}>admin@studentms.com</div>
+            <div style={{ fontWeight: 700, color: '#0f172a' }}>Demo Account</div>
+            <div style={{ color: '#64748b' }}>admin@studentms.com</div>
           </div>
           <button
             type="button"
-            className="btn btn-ghost btn-sm"
+            className="btn-dark-green"
             onClick={handleFillDemo}
-            style={{ color: 'var(--color-primary)', fontWeight: 600 }}
+            style={{ padding: '0.375rem 0.75rem', fontSize: '0.8125rem' }}
           >
             <Sparkles size={14} />
             <span>Auto Fill</span>
@@ -176,19 +177,25 @@ export const Login = () => {
             icon={Lock}
           />
 
-          <Button
+          <button
             type="submit"
-            variant="primary"
-            isLoading={isLoading}
-            style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem' }}
+            className="btn-dark-green"
+            disabled={isLoading}
+            style={{
+              width: '100%',
+              marginTop: '0.5rem',
+              padding: '0.75rem',
+              fontSize: '0.9375rem',
+              fontWeight: 700,
+            }}
           >
-            Sign In
-          </Button>
+            {isLoading ? 'Signing In...' : 'Sign In'}
+          </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
+        <div style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.875rem', color: '#64748b' }}>
           Don't have an account?{' '}
-          <Link to="/register" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>
+          <Link to="/register" style={{ color: '#235817', fontWeight: 700 }}>
             Create an account
           </Link>
         </div>
