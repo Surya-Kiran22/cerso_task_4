@@ -1,9 +1,11 @@
 # Blueprint Render deployment specification for Student Management System
+# Explicitly configured on 100% FREE Tier (plan: free)
 services:
-  # Backend Express REST API Service
+  # Backend Express REST API Service (Free Tier)
   - type: web
     name: student-management-server
     env: node
+    plan: free
     rootDir: server
     buildCommand: npm install
     startCommand: npm start
@@ -23,10 +25,11 @@ services:
       - key: CORS_ORIGIN
         sync: false
 
-  # Frontend React Vite Static Web Site
+  # Frontend React Vite Static Web Site (Free Tier)
   - type: web
     name: student-management-client
     env: static
+    plan: free
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
