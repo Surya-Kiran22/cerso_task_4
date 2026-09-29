@@ -12,9 +12,9 @@ export const Layout = () => {
 
   return (
     <div className="app-layout">
-      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-      <div className="main-wrapper">
-        <Navbar onToggleSidebar={toggleSidebar} />
+      <Navbar onToggleSidebar={toggleSidebar} />
+      <div className="layout-body">
+        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <main className="main-content">
           <Outlet />
         </main>
