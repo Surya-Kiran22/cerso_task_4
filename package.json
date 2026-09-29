@@ -5,7 +5,7 @@
   "description": "Unified Full-Stack Student Management System (Node.js + Express + React Vite + MongoDB)",
   "type": "module",
   "scripts": {
-    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "build": "cd client && npm install --include=dev && npm run build && cd ../server && npm install",
     "start": "cd server && node src/server.js",
     "dev": "cd server && npm run dev",
     "seed": "cd server && npm run seed",
