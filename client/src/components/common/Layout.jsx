@@ -11,11 +11,11 @@ export const Layout = () => {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
-    <div className="app-layout">
+    <div className="app-shell">
       <Navbar onToggleSidebar={toggleSidebar} />
-      <div className="layout-body">
+      <div className="app-body">
         <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-        <main className="main-content">
+        <main className="app-content">
           <Outlet />
         </main>
       </div>
