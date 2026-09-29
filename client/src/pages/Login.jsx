@@ -76,21 +76,23 @@ export const Login = () => {
     <div
       style={{
         minHeight: '100vh',
+        width: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.5rem',
-        background: '#f8fafc',
+        padding: '2rem 1rem',
+        backgroundColor: '#e2e8f0',
       }}
     >
+      {/* Prominent White Card Box Container */}
       <div
         style={{
           width: '100%',
           maxWidth: '440px',
-          background: '#ffffff',
+          backgroundColor: '#ffffff',
           border: '1px solid #cbd5e1',
-          borderRadius: '8px',
-          boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+          borderRadius: '12px',
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
           padding: '2.5rem 2rem',
         }}
       >
@@ -99,8 +101,8 @@ export const Login = () => {
             style={{
               width: '56px',
               height: '56px',
-              borderRadius: '8px',
-              background: '#ecfdf5',
+              borderRadius: '10px',
+              backgroundColor: '#ecfdf5',
               color: '#235817',
               display: 'inline-flex',
               alignItems: 'center',
@@ -119,10 +121,10 @@ export const Login = () => {
           </p>
         </div>
 
-        {/* Demo Account Quick Box */}
+        {/* Demo Account Box */}
         <div
           style={{
-            background: '#f1f5f9',
+            backgroundColor: '#f1f5f9',
             border: '1px solid #cbd5e1',
             borderRadius: '6px',
             padding: '0.75rem 1rem',
